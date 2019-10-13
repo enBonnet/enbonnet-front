@@ -7,10 +7,12 @@ import Layout from "../components/layout"
 const ArticleTemplate = ({ data }) => (
   <Layout>
     <h1>{data.strapiArticle.title}</h1>
-    <Img
-      className="post-image"
-      fluid={data.strapiArticle.image.childImageSharp.fluid}
-    />
+    <div className="picture">
+      <Img
+        className="post-image"
+        fluid={data.strapiArticle.image.childImageSharp.fluid}
+      />
+    </div>
     <ReactMarkdown source={data.strapiArticle.content} />
   </Layout>
 )
