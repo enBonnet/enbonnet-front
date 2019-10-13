@@ -19,11 +19,17 @@ const IndexPage = ({ data }) => (
       <ul className="posts">
         {data.allStrapiArticle.edges.map(document => (
           <li key={document.node.id}>
-            <Link className="post" to={`/article/${document.node.id}`}>
-              <h2>{document.node.title}</h2>
-              <Img fluid={document.node.image.childImageSharp.fluid} />
-              <p>{document.node.description}</p>
-            </Link>
+            <article>
+              <Link className="post" to={`/article/${document.node.id}`}>
+                <h2>{document.node.title}</h2>
+                <div className="post-description">
+                  <div className="post-image">
+                    <Img fluid={document.node.image.childImageSharp.fluid} />
+                  </div>
+                  <p>{document.node.description}</p>
+                </div>
+              </Link>
+            </article>
           </li>
         ))}
       </ul>
