@@ -6,6 +6,7 @@ $yellow: #ffffc7;
 $green: #548687;
 $purple: #473335;
 $grey: #464646;
+$greyTwo: #d8d8d8;
 
 html {
   background-color: $white;
@@ -22,14 +23,8 @@ p {
   margin-bottom: 0px;
 }
 
-main,
-footer,
-header {
+main {
   padding: 0 16px;
-}
-
-footer {
-  margin-top: 64px;
 }
 
 header {
@@ -102,4 +97,22 @@ code {
 
 pre {
   margin: 16px 0;
+}
+
+footer {
+  width: 100%;
+  padding: 4px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 64px;
+  background-color: $greyTwo;
+  .social {
+    display: flex;
+    align-items: center;
+    line-height: 17px;
+    a {
+      padding: 0 4px;
+    }
+  }
 }
