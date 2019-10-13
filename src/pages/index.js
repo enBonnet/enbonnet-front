@@ -6,22 +6,26 @@ import "../styles/global.scss"
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <ul>
-      {data.allStrapiArticle.edges.map(document => (
-        <li key={document.node.id}>
-          <h2>
-            <Link to={`/article/${document.node.id}`}>
-              {document.node.title}
+    <p>
+      Hola, bienvenid(a) soy nerd, Frontend Developer, me encanta colaborar con
+      las comunidades de desarrolladores y compartir conocimientos.
+      Co-organizador de <a href="https://noders.com">Noders</a> y{" "}
+      <a href="https://nodeschool.io/santiago">Nodeschool Santiago</a>.
+    </p>
+    <section>
+      <h2 className="section-title">Blog</h2>
+      <ul className="posts">
+        {data.allStrapiArticle.edges.map(document => (
+          <li key={document.node.id}>
+            <Link className="post" to={`/article/${document.node.id}`}>
+              <h2>{document.node.title}</h2>
+              <Img fluid={document.node.image.childImageSharp.fluid} />
+              <p>{document.node.description}</p>
             </Link>
-          </h2>
-          <Img fixed={document.node.image.childImageSharp.fixed} />
-          <p>{document.node.description}</p>
-        </li>
-      ))}
-    </ul>
+          </li>
+        ))}
+      </ul>
+    </section>
   </Layout>
 )
 
@@ -35,12 +39,8 @@ export const pageQuery = graphql`
           id
           image {
             childImageSharp {
-              fixed(width: 400) {
-                base64
-                width
-                height
-                src
-                srcSet
+              fluid(maxWidth: 400, maxHeight: 250) {
+                ...GatsbyImageSharpFluid
               }
             }
           }

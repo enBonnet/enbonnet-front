@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: "enBonnet Blog",
+    title: "enBonnet",
     description:
       "Un blog de TI con articulos y apuntes que puedo usar en mi día a día",
     author: "Ender Bonnet",

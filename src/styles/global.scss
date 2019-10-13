@@ -1,0 +1,64 @@
+// Colors
+$white: #ffffff;
+$orange: #fcaa67;
+$red: #b0413e;
+$yellow: #ffffc7;
+$green: #548687;
+$purple: #473335;
+
+html {
+  background-color: $white;
+}
+
+a {
+  color: inherit;
+  &:hover {
+    color: $red;
+  }
+}
+
+p {
+  margin-bottom: 0px;
+}
+
+main,
+footer,
+header {
+  padding: 0 16px;
+}
+
+footer {
+  margin-top: 64px;
+}
+
+header {
+  margin-bottom: 16px;
+  background-color: $red;
+  .title {
+    text-align: right;
+    margin: 0;
+    padding: 4px 0;
+    color: $white;
+    font-size: 16px;
+    .site-title {
+      text-decoration: none;
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+}
+
+.section-title {
+  text-align: center;
+  margin-top: 64px;
+  font-size: 24px;
+}
+
+.posts {
+  list-style: none;
+  margin: 64px 0;
+  .post {
+    text-decoration: none;
+  }
+}
