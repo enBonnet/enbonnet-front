@@ -16,7 +16,7 @@ const Header = ({ siteTitle }) => (
         <Icons name="instagram" />
       </a>
       <a href="https://t.me/enbonnet">
-        <Icons name="instagram" name="sign" />
+        <Icons name="sign" />
       </a>
     </div>
     <h1 className="title">
