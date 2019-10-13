@@ -12,7 +12,9 @@ const IndexPage = ({ data }) => (
       {data.allStrapiArticle.edges.map(document => (
         <li key={document.node.id}>
           <h2>
-            <Link to={`/${document.node.id}`}>{document.node.title}</Link>
+            <Link to={`/article/${document.node.id}`}>
+              {document.node.title}
+            </Link>
           </h2>
           <Img fixed={document.node.image.childImageSharp.fixed} />
           <p>{document.node.description}</p>
@@ -33,7 +35,11 @@ export const pageQuery = graphql`
           image {
             childImageSharp {
               fixed(width: 400) {
-                ...GatsbyImageSharpFixed
+                base64
+                width
+                height
+                src
+                srcSet
               }
             }
           }
