@@ -7,7 +7,10 @@ import Layout from "../components/layout"
 const ArticleTemplate = ({ data }) => (
   <Layout>
     <h1>{data.strapiArticle.title}</h1>
-    <Img fixed={data.strapiArticle.image.childImageSharp.fixed} />
+    <Img
+      className="post-image"
+      fluid={data.strapiArticle.image.childImageSharp.fluid}
+    />
     <ReactMarkdown source={data.strapiArticle.content} />
   </Layout>
 )
@@ -21,12 +24,8 @@ export const query = graphql`
       content
       image {
         childImageSharp {
-          fixed(width: 600) {
-            base64
-            width
-            height
-            src
-            srcSet
+          fluid(maxWidth: 600) {
+            ...GatsbyImageSharpFluid_noBase64
           }
         }
       }

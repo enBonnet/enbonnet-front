@@ -7,13 +7,15 @@ import "../styles/global.scss"
 const IndexPage = ({ data }) => (
   <Layout>
     <p>
-      Hola, bienvenid(a) soy nerd, Frontend Developer, me encanta colaborar con
+      Hola, bienvenid(a), soy nerd, frontend developer, me encanta colaborar con
       las comunidades de desarrolladores y compartir conocimientos.
       Co-organizador de <a href="https://noders.com">Noders</a> y{" "}
-      <a href="https://nodeschool.io/santiago">Nodeschool Santiago</a>.
+      <a href="https://nodeschool.io/santiago">Nodeschool Santiago</a>. Humano
+      de <a href="https://instagram.com/kyratail">@kyratail</a> a tiemplo
+      completo.
     </p>
     <section>
-      <h2 className="section-title">Blog</h2>
+      <h2 className="section-title">- Blog -</h2>
       <ul className="posts">
         {data.allStrapiArticle.edges.map(document => (
           <li key={document.node.id}>
