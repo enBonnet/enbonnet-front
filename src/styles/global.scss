@@ -67,8 +67,23 @@ header {
 .posts {
   list-style: none;
   margin: 64px 0;
-  .post {
+  a {
     text-decoration: none;
+  }
+  .post {
+    margin-bottom: 96px;
+    .post-description {
+      display: grid;
+      grid-template-areas: "post-image" "post-description";
+      align-items: center;
+      .post-image {
+        grid-area: post-image;
+        margin-bottom: 0;
+      }
+      .description {
+        grid-area: post-description;
+      }
+    }
   }
 }
 
@@ -121,13 +136,9 @@ footer {
   .posts {
     .post {
       .post-description {
-        display: flex;
-        align-items: center;
-        .post-image {
-          width: 500px;
-          margin-bottom: 0;
-          margin-right: 32px;
-        }
+        grid-template-areas: "post-image post-description";
+        grid-template-columns: 300px auto;
+        column-gap: 20px;
       }
     }
   }

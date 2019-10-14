@@ -1,6 +1,5 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Img from "gatsby-image"
 import Layout from "../components/layout"
 import "../styles/global.scss"
 
@@ -19,17 +18,17 @@ const IndexPage = ({ data }) => (
       <ul className="posts">
         {data.allStrapiArticle.edges.map(document => (
           <li key={document.node.id}>
-            <article>
-              <Link className="post" to={`/article/${document.node.id}`}>
+            <Link to={`/article/${document.node.id}`}>
+              <article className="post">
                 <h2>{document.node.title}</h2>
                 <div className="post-description">
                   <div className="post-image">
-                    <Img fluid={document.node.image.childImageSharp.fluid} />
+                    <img src={document.node.image.publicURL} />
                   </div>
-                  <p>{document.node.description}</p>
+                  <p className="description">{document.node.description}</p>
                 </div>
-              </Link>
-            </article>
+              </article>
+            </Link>
           </li>
         ))}
       </ul>
@@ -46,11 +45,7 @@ export const pageQuery = graphql`
         node {
           id
           image {
-            childImageSharp {
-              fluid(maxWidth: 800) {
-                ...GatsbyImageSharpFluid
-              }
-            }
+            publicURL
           }
           title
           description
