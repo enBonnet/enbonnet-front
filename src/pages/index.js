@@ -23,7 +23,7 @@ const IndexPage = ({ data }) => (
                 <h2>{document.node.title}</h2>
                 <div className="post-description">
                   <div className="post-image">
-                    <img src={document.node.image.publicURL} />
+                    <img src={document.node.image.publicURL} alt=" " />
                   </div>
                   <p className="description">{document.node.description}</p>
                 </div>

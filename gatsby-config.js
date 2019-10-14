@@ -40,25 +40,25 @@ module.exports = {
         background_color: "#ffffff",
         theme_color: "#b0413e",
         display: "minimal-ui",
-        icon: `src/images/favicon.ico`,
+        icon: `src/images/favicon-32x32.png`,
         icons: [
           {
-            src: `src/images/favicon-16x16.png`,
+            src: `icons/favicon-16x16.png`,
             sizes: `16x16`,
             type: `image/png`,
           },
           {
-            src: `src/images/favicon-32x32.png`,
+            src: `icons/favicon-32x32.png`,
             sizes: `32x32`,
             type: `image/png`,
           },
           {
-            src: `src/images/android-chrome-512x512.png`,
+            src: `icons/icon-512x512.png`,
             sizes: `512x512`,
             type: `image/png`,
           },
           {
-            src: `src/images/android-chrome-512x512.png`,
+            src: `icons/icon-512x512.png`,
             sizes: `512x512`,
             type: `image/png`,
           },
