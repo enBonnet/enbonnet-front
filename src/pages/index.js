@@ -10,7 +10,7 @@ const IndexPage = ({ data }) => (
       las comunidades de desarrolladores y compartir conocimientos.
       Co-organizador de <a href="https://noders.com">Noders</a> y{" "}
       <a href="https://nodeschool.io/santiago">Nodeschool Santiago</a>. Humano
-      de <a href="https://instagram.com/kyratail">@kyratail</a> a tiemplo
+      de <a href="https://instagram.com/kyratail">@kyratail</a> a tiempo
       completo.
     </p>
     <section>
