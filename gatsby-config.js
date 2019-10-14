@@ -34,13 +34,35 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "gatsby-starter-default",
-        short_name: "starter",
+        name: "enBonnet Blog",
+        short_name: "enBonnet",
         start_url: "/",
-        background_color: "#663399",
-        theme_color: "#663399",
+        background_color: "#ffffff",
+        theme_color: "#b0413e",
         display: "minimal-ui",
-        icon: "src/images/gatsby-icon.png",
+        icon: `src/images/favicon.ico`,
+        icons: [
+          {
+            src: `src/images/favicon-16x16.png`,
+            sizes: `16x16`,
+            type: `image/png`,
+          },
+          {
+            src: `src/images/favicon-32x32.png`,
+            sizes: `32x32`,
+            type: `image/png`,
+          },
+          {
+            src: `src/images/android-chrome-512x512.png`,
+            sizes: `512x512`,
+            type: `image/png`,
+          },
+          {
+            src: `src/images/android-chrome-512x512.png`,
+            sizes: `512x512`,
+            type: `image/png`,
+          },
+        ],
       },
     },
     "gatsby-plugin-offline",
