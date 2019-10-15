@@ -1,9 +1,15 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
+<<<<<<< HEAD
+=======
+import SEO from "../components/seo"
+import "../styles/global.scss"
+>>>>>>> 30bc67d99a0b297a8a68f98643472f2554ca4b8f
 
 const IndexPage = ({ data }) => (
   <Layout>
+    <SEO />
     <p>
       Hola, bienvenid(a), soy nerd, frontend developer, me encanta colaborar con
       las comunidades de desarrolladores y compartir conocimientos.
