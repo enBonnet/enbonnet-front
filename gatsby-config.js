@@ -2,8 +2,16 @@ module.exports = {
   siteMetadata: {
     title: "enBonnet",
     description:
-      "Un blog de TI con articulos y apuntes que puedo usar en mi día a día",
+      "Temas de tecnologia que me apasionan como el Frontend, Web, Deploy, Aplicaciones y mas...",
     author: "Ender Bonnet",
+    siteUrl: "https://www.enbonnet.me",
+    image: "public/icons/icon-512x512.png",
+    author: {
+      name: "Ender Bonnet",
+    },
+    social: {
+      twitter: "@enBonnet",
+    },
   },
   plugins: [
     "gatsby-plugin-react-helmet",
