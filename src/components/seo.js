@@ -5,7 +5,7 @@ import { StaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
 import SchemaOrg from "./SchemaOrg"
 
-const SEO = ({ postData, frontmatter = {}, postImage, isBlogPost }) => (
+const SEO = ({ postData, isBlogPost }) => (
   <StaticQuery
     query={graphql`
       {
@@ -26,16 +26,15 @@ const SEO = ({ postData, frontmatter = {}, postImage, isBlogPost }) => (
       }
     `}
     render={({ site: { siteMetadata: seo } }) => {
-      const postMeta =
-        frontmatter || postData.childMarkdownRemark.frontmatter || {}
-
+      const postMeta = postData || {}
       const title = postMeta.title || seo.title
       const description = postMeta.description || seo.description
-      const image = postImage ? `${seo.canonicalUrl}${postImage}` : seo.image
+      const image = postMeta.image
+        ? `${seo.siteUrl}${postMeta.image}`
+        : seo.image
       const url = postMeta.slug
-        ? `${seo.canonicalUrl}${path.sep}${postMeta.slug}`
-        : seo.canonicalUrl
-      const datePublished = isBlogPost ? postMeta.datePublished : false
+        ? `${seo.siteUrl}${path.sep}${postMeta.slug}`
+        : seo.siteUrl
 
       return (
         <React.Fragment>
@@ -65,8 +64,7 @@ const SEO = ({ postData, frontmatter = {}, postImage, isBlogPost }) => (
             title={title}
             image={image}
             description={description}
-            datePublished={datePublished}
-            canonicalUrl={seo.canonicalUrl}
+            siteUrl={seo.siteUrl}
             author={seo.author}
             defaultTitle={seo.title}
           />
@@ -79,18 +77,15 @@ const SEO = ({ postData, frontmatter = {}, postImage, isBlogPost }) => (
 SEO.propTypes = {
   isBlogPost: PropTypes.bool,
   postData: PropTypes.shape({
-    childMarkdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.any,
-      excerpt: PropTypes.any,
-    }),
+    title: PropTypes.string,
+    image: PropTypes.string,
+    description: PropTypes.string,
   }),
-  postImage: PropTypes.string,
 }
 
 SEO.defaultProps = {
   isBlogPost: false,
-  postData: { childMarkdownRemark: {} },
-  postImage: null,
+  postData: {},
 }
 
 export default SEO
