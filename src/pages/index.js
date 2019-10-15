@@ -1,10 +1,13 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import Helmet from "react-helmet"
 import Layout from "../components/layout"
+import SEO from "../components/SEO"
 import "../styles/global.scss"
 
 const IndexPage = ({ data }) => (
   <Layout>
+    <SEO />
     <p>
       Hola, bienvenid(a), soy nerd, frontend developer, me encanta colaborar con
       las comunidades de desarrolladores y compartir conocimientos.
