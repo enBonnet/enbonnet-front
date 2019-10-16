@@ -1,5 +1,23 @@
 const path = require(`path`)
 
+const slugify = string => {
+  if (string) {
+    const a = "àáäâãåèéëêìíïîòóöôùúüûñçßÿœæŕśńṕẃǵǹḿǘẍźḧ·/_,:;"
+    const b = "aaaaaaeeeeiiiioooouuuuncsyoarsnpwgnmuxzh------"
+    const p = new RegExp(a.split("").join("|"), "g")
+
+    return string
+      .toString()
+      .toLowerCase()
+      .replace(/\s+/g, "-") // Replace spaces with
+      .replace(p, c => b.charAt(a.indexOf(c))) // Replace special characters
+      .replace(/&/g, "-and-") // Replace & with ‘and’
+      .replace(/[^\w\-]+/g, "") // Remove all non-word characters
+      .replace(/\-\-+/g, "-") // Replace multiple — with single -
+      .replace(/^-+/, "") // Trim — from start of text .replace(/-+$/, '') // Trim — from end of text
+  }
+}
+
 const makeRequest = (graphql, request) =>
   new Promise((resolve, reject) => {
     // Query for nodes to use in creating pages.
@@ -36,10 +54,11 @@ exports.createPages = ({ actions, graphql }) => {
     // Create pages for each article.
     result.data.allStrapiArticle.edges.forEach(({ node }) => {
       createPage({
-        path: `article/${node.id}`,
+        path: `article/${node.id}-${slugify(node.title)}`,
         component: path.resolve(`src/templates/article.js`),
         context: {
           id: node.id,
+          title: node.title,
         },
       })
     })

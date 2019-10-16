@@ -4,6 +4,22 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import "../styles/global.scss"
 
+const slugify = string => {
+  const a = "àáäâãåèéëêìíïîòóöôùúüûñçßÿœæŕśńṕẃǵǹḿǘẍźḧ·/_,:;"
+  const b = "aaaaaaeeeeiiiioooouuuuncsyoarsnpwgnmuxzh------"
+  const p = new RegExp(a.split("").join("|"), "g")
+
+  return string
+    .toString()
+    .toLowerCase()
+    .replace(/\s+/g, "-") // Replace spaces with
+    .replace(p, c => b.charAt(a.indexOf(c))) // Replace special characters
+    .replace(/&/g, "-and-") // Replace & with ‘and’
+    .replace(/[^\w\-]+/g, "") // Remove all non-word characters
+    .replace(/\-\-+/g, "-") // Replace multiple — with single -
+    .replace(/^-+/, "") // Trim — from start of text .replace(/-+$/, '') // Trim — from end of text
+}
+
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO />
@@ -20,7 +36,11 @@ const IndexPage = ({ data }) => (
       <ul className="posts">
         {data.allStrapiArticle.edges.map(document => (
           <li key={document.node.id}>
-            <Link to={`/article/${document.node.id}`}>
+            <Link
+              to={`/article/${document.node.id}/${slugify(
+                document.node.title
+              )}`}
+            >
               <article className="post">
                 <h2>{document.node.title}</h2>
                 <div className="post-description">
