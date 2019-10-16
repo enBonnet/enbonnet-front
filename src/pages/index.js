@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import { slugify } from "../utils/slugify"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import "../styles/global.scss"
@@ -20,7 +21,11 @@ const IndexPage = ({ data }) => (
       <ul className="posts">
         {data.allStrapiArticle.edges.map(document => (
           <li key={document.node.id}>
-            <Link to={`/article/${document.node.id}`}>
+            <Link
+              to={`/article/${document.node.id}/${slugify(
+                document.node.title
+              )}`}
+            >
               <article className="post">
                 <h2>{document.node.title}</h2>
                 <div className="post-description">
