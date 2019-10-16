@@ -1,22 +1,5 @@
 const path = require(`path`)
-
-const slugify = string => {
-  if (string) {
-    const a = "àáäâãåèéëêìíïîòóöôùúüûñçßÿœæŕśńṕẃǵǹḿǘẍźḧ·/_,:;"
-    const b = "aaaaaaeeeeiiiioooouuuuncsyoarsnpwgnmuxzh------"
-    const p = new RegExp(a.split("").join("|"), "g")
-
-    return string
-      .toString()
-      .toLowerCase()
-      .replace(/\s+/g, "-") // Replace spaces with
-      .replace(p, c => b.charAt(a.indexOf(c))) // Replace special characters
-      .replace(/&/g, "-and-") // Replace & with ‘and’
-      .replace(/[^\w\-]+/g, "") // Remove all non-word characters
-      .replace(/\-\-+/g, "-") // Replace multiple — with single -
-      .replace(/^-+/, "") // Trim — from start of text .replace(/-+$/, '') // Trim — from end of text
-  }
-}
+const { slugify } = require("./src/utils/slugify")
 
 const makeRequest = (graphql, request) =>
   new Promise((resolve, reject) => {
@@ -45,6 +28,7 @@ exports.createPages = ({ actions, graphql }) => {
         edges {
           node {
             id
+            title
           }
         }
       }
@@ -52,9 +36,11 @@ exports.createPages = ({ actions, graphql }) => {
     `
   ).then(result => {
     // Create pages for each article.
+    console.info("🥐 Creando articulos")
     result.data.allStrapiArticle.edges.forEach(({ node }) => {
+      console.info(node.title)
       createPage({
-        path: `article/${node.id}-${slugify(node.title)}`,
+        path: `article/${node.id}/${slugify(node.title)}`,
         component: path.resolve(`src/templates/article.js`),
         context: {
           id: node.id,
