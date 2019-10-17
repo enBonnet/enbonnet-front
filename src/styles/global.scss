@@ -22,6 +22,12 @@ a {
 
 p {
   margin-bottom: 0px;
+  & > code {
+    color: $red;
+    background-color: $greyTwo;
+    border-radius: 0.3em;
+    padding: 4px;
+  }
 }
 
 main {
@@ -103,19 +109,6 @@ header {
 .post-image {
   margin-bottom: 32px;
   max-width: 600px;
-}
-
-code {
-  background-color: $grey;
-  color: $white;
-  padding: 8px;
-  border-radius: 3px;
-  word-break: break-word;
-  white-space: pre-wrap;
-}
-
-pre {
-  margin: 16px 0;
 }
 
 footer {
