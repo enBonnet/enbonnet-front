@@ -4,6 +4,7 @@ import Img from "gatsby-image"
 import ReactMarkdown from "react-markdown"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import CodeBlock from "../components/CodeBlock"
 
 const ArticleTemplate = ({ data }) => (
   <Layout>
@@ -20,7 +21,10 @@ const ArticleTemplate = ({ data }) => (
       className="post-image"
       fluid={data.strapiArticle.image.childImageSharp.fluid}
     />
-    <ReactMarkdown source={data.strapiArticle.content} />
+    <ReactMarkdown
+      source={data.strapiArticle.content}
+      renderers={{ code: CodeBlock }}
+    />
   </Layout>
 )
 
