@@ -24,7 +24,7 @@ exports.createPages = ({ actions, graphql }) => {
     graphql,
     `
     {
-      allStrapiArticle(sort: {order: DESC, fields: strapiId}, limit: 10) {
+      allStrapiArticle(sort: {order: DESC, fields: strapiId}) {
         edges {
           node {
             title
