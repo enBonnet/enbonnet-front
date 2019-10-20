@@ -24,11 +24,11 @@ exports.createPages = ({ actions, graphql }) => {
     graphql,
     `
     {
-      allStrapiArticle {
+      allStrapiArticle(sort: {order: DESC, fields: strapiId}, limit: 10) {
         edges {
           node {
-            id
             title
+            strapiId
           }
         }
       }
@@ -38,12 +38,12 @@ exports.createPages = ({ actions, graphql }) => {
     // Create pages for each article.
     console.info("🥐 Creando articulos")
     result.data.allStrapiArticle.edges.forEach(({ node }) => {
-      console.info(node.title)
+      console.info(`${node.strapiId} - ${node.title}`)
       createPage({
-        path: `article/${node.id}/${slugify(node.title)}`,
+        path: `article/${node.strapiId}/${slugify(node.title)}`,
         component: path.resolve(`src/templates/article.js`),
         context: {
-          id: node.id,
+          id: node.strapiId,
           title: node.title,
         },
       })
