@@ -20,9 +20,9 @@ const IndexPage = ({ data }) => (
       <h2 className="section-title">- Blog -</h2>
       <ul className="posts">
         {data.allStrapiArticle.edges.map(document => (
-          <li key={document.node.id}>
+          <li key={document.node.strapiId}>
             <Link
-              to={`/article/${document.node.id}/${slugify(
+              to={`/article/${document.node.strapiId}/${slugify(
                 document.node.title
               )}`}
             >
@@ -47,10 +47,10 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query IndexQuery {
-    allStrapiArticle {
+    allStrapiArticle(sort: { order: DESC, fields: strapiId }) {
       edges {
         node {
-          id
+          strapiId
           image {
             publicURL
           }
