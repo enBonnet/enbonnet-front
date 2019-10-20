@@ -9,6 +9,16 @@ $purple: #473335;
 $grey: #464646;
 $greyTwo: #d8d8d8;
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 1.5rem 0;
+  word-break: keep-all;
+}
+
 html {
   background-color: $white;
 }
