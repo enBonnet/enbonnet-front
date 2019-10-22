@@ -5,7 +5,6 @@ module.exports = {
       "Temas de tecnologia que me apasionan como el Frontend, Web, Deploy, Aplicaciones y mas...",
     author: "Ender Bonnet",
     siteUrl: "https://www.enbonnet.me",
-    image: "public/icons/icon-512x512.png",
     author: {
       name: "Ender Bonnet",
     },
@@ -16,6 +15,9 @@ module.exports = {
   plugins: [
     "gatsby-plugin-react-helmet",
     `gatsby-plugin-sass`,
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
+    "gatsby-plugin-offline",
     {
       resolve: `gatsby-plugin-typography`,
       options: {
@@ -37,8 +39,6 @@ module.exports = {
         queryLimit: 1000,
       },
     },
-    "gatsby-transformer-sharp",
-    "gatsby-plugin-sharp",
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -52,6 +52,5 @@ module.exports = {
         icon: `src/images/ender-logo.png`,
       },
     },
-    "gatsby-plugin-offline",
   ],
 }
