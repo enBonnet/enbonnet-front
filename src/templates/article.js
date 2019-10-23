@@ -5,6 +5,7 @@ import ReactMarkdown from "react-markdown"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import CodeBlock from "../components/CodeBlock"
+import { BackButton } from "../components/backButton"
 
 const ArticleTemplate = ({ data }) => (
   <Layout>
@@ -16,15 +17,19 @@ const ArticleTemplate = ({ data }) => (
         description: data.strapiArticle.description,
       }}
     />
+    <BackButton />
     <h1>{data.strapiArticle.title}</h1>
     <Img
       className="post-image"
       fluid={data.strapiArticle.image.childImageSharp.fluid}
     />
-    <ReactMarkdown
-      source={data.strapiArticle.content}
-      renderers={{ code: CodeBlock }}
-    />
+    <article className="post-content">
+      <ReactMarkdown
+        source={data.strapiArticle.content}
+        renderers={{ code: CodeBlock }}
+      />
+    </article>
+    <BackButton />
   </Layout>
 )
 

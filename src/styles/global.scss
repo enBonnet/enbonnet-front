@@ -44,6 +44,15 @@ main {
   padding: 0 16px;
 }
 
+.back {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  .back-text {
+    margin-left: 8px;
+  }
+}
+
 header {
   display: flex;
   margin-bottom: 16px;
@@ -110,6 +119,10 @@ header {
 .post-image {
   margin-bottom: 32px;
   max-width: 600px;
+}
+
+.post-content {
+  margin-bottom: 32px;
 }
 
 footer {
