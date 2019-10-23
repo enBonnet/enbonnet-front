@@ -5,6 +5,7 @@ module.exports = {
       "Temas de tecnologia que me apasionan como el Frontend, Web, Deploy, Aplicaciones y mas...",
     author: "Ender Bonnet",
     siteUrl: "https://www.enbonnet.me",
+    image: "src/images/ender-logo.png",
     author: {
       name: "Ender Bonnet",
     },
