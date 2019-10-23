@@ -34,7 +34,7 @@ module.exports = {
     {
       resolve: "gatsby-source-strapi",
       options: {
-        apiURL: "https://thawing-mountain-36898.herokuapp.com",
+        apiURL: "https://enbonnet-cms.herokuapp.com/",
         contentTypes: ["article", "category"],
         queryLimit: 1000,
       },
@@ -46,7 +46,7 @@ module.exports = {
         short_name: "enBonnet",
         start_url: "/",
         lang: "es",
-        background_color: "#ffffff",
+        background_color: "#b0413e",
         theme_color: "#b0413e",
         display: "fullscreen",
         icon: `src/images/ender-logo.png`,
