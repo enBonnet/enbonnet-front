@@ -19,25 +19,23 @@ const IndexPage = ({ data }) => (
     <section>
       <h2 className="section-title">- Blog -</h2>
       <ul className="posts">
-        {data.allStrapiArticle.edges.map(document => (
-          <li key={document.node.strapiId}>
-            <Link
-              to={`/article/${document.node.strapiId}/${slugify(
-                document.node.title
-              )}`}
-            >
-              <article className="post">
-                <h2>{document.node.title}</h2>
-                <div className="post-description">
-                  <div className="post-image">
-                    <img src={document.node.image.publicURL} alt=" " />
+        {data.allStrapiArticle.edges.map(({ node }) =>
+          node.publico ? (
+            <li key={node.strapiId}>
+              <Link to={`/article/${node.strapiId}/${slugify(node.title)}`}>
+                <article className="post">
+                  <h2>{node.title}</h2>
+                  <div className="post-description">
+                    <div className="post-image">
+                      <img src={node.image.publicURL} alt=" " />
+                    </div>
+                    <p className="description">{node.description}</p>
                   </div>
-                  <p className="description">{document.node.description}</p>
-                </div>
-              </article>
-            </Link>
-          </li>
-        ))}
+                </article>
+              </Link>
+            </li>
+          ) : null
+        )}
       </ul>
     </section>
   </Layout>
@@ -56,6 +54,7 @@ export const pageQuery = graphql`
           }
           title
           description
+          publico
         }
       }
     }

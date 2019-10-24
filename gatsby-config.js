@@ -15,20 +15,20 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-react-helmet",
-    `gatsby-plugin-sass`,
+    "gatsby-plugin-sass",
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
     "gatsby-plugin-offline",
     {
-      resolve: `gatsby-plugin-typography`,
+      resolve: "gatsby-plugin-typography",
       options: {
-        pathToConfigModule: `src/utils/typography`,
+        pathToConfigModule: "src/utils/typography",
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: `images`,
+        name: "images",
         path: `${__dirname}/src/images`,
       },
     },
@@ -41,7 +41,7 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: "gatsby-plugin-manifest",
       options: {
         name: "enBonnet Blog",
         short_name: "enBonnet",
@@ -50,7 +50,7 @@ module.exports = {
         background_color: "#FD8529",
         theme_color: "#b0413e",
         display: "fullscreen",
-        icon: `src/images/ender-logo.png`,
+        icon: "src/images/ender-logo.png",
       },
     },
   ],
