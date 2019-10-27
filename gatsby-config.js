@@ -49,7 +49,7 @@ module.exports = {
         lang: "es",
         background_color: "#FD8529",
         theme_color: "#b0413e",
-        display: "fullscreen",
+        display: "standalone",
         icon: "src/images/ender-logo.png",
       },
     },
