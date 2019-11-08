@@ -8,7 +8,7 @@ import "../styles/global.scss"
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO />
-    <p>
+    <p className="biography">
       Hola, bienvenid(a), soy nerd, frontend developer, me encanta colaborar con
       las comunidades de desarrolladores y compartir conocimientos.
       Co-organizador de <a href="https://noders.com">Noders</a> y{" "}
@@ -18,25 +18,29 @@ const IndexPage = ({ data }) => (
     </p>
     <section>
       <h2 className="section-title">- Blog -</h2>
-      <ul className="posts">
+      <div className="posts">
         {data.allStrapiArticle.edges.map(({ node }) =>
           node.publico ? (
-            <li key={node.strapiId}>
+            <div key={node.strapiId}>
               <Link to={`/article/${node.strapiId}/${slugify(node.title)}`}>
                 <article className="post">
-                  <h2>{node.title}</h2>
+                  <div className="title">{node.title}</div>
                   <div className="post-description">
                     <div className="post-image">
-                      <img src={node.image.publicURL} alt=" " />
+                      <img
+                        className="image"
+                        src={node.image.publicURL}
+                        alt=" "
+                      />
                     </div>
                     <p className="description">{node.description}</p>
                   </div>
                 </article>
               </Link>
-            </li>
+            </div>
           ) : null
         )}
-      </ul>
+      </div>
     </section>
   </Layout>
 )

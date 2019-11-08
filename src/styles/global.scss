@@ -1,3 +1,5 @@
+@import "./normalize.scss";
+
 // Colors
 $black: #000000;
 $white: #ffffff;
@@ -19,6 +21,10 @@ h6 {
   word-break: keep-all;
 }
 
+img {
+  display: inline-block;
+}
+
 ul {
   margin-top: 32px;
   margin-bottom: 32px;
@@ -37,6 +43,7 @@ a {
 
 p {
   margin-bottom: 0px;
+  line-height: 32px;
   & > code {
     color: $red;
     background-color: $greyTwo;
@@ -106,6 +113,10 @@ header {
   }
   .post {
     margin-bottom: 96px;
+    .title {
+      font-weight: 700;
+      font-size: 26px;
+    }
     .post-description {
       display: grid;
       grid-template-areas: "post-image" "post-description";
@@ -113,6 +124,10 @@ header {
       .post-image {
         grid-area: post-image;
         margin-bottom: 0;
+        margin: 16px 0;
+        .image {
+          margin: 0;
+        }
       }
       .description {
         grid-area: post-description;
@@ -164,6 +179,9 @@ footer {
         grid-template-areas: "post-image post-description";
         grid-template-columns: 300px auto;
         column-gap: 20px;
+        .post-image {
+          margin: 8px 0;
+        }
       }
     }
   }
