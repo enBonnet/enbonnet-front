@@ -20,6 +20,14 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-plugin-offline",
     {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://www.enbonnet.me",
+        sitemap: "https://www.enbonnet.me/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
+    {
       resolve: "gatsby-plugin-typography",
       options: {
         pathToConfigModule: "src/utils/typography",
