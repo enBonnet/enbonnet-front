@@ -17,7 +17,9 @@ const IndexPage = ({ data }) => (
       completo.
     </p>
     <section>
-      <h2 className="section-title">- Blog -</h2>
+      <div className="section-title">
+        - <h2 className="blog-title">Blog</h2> -
+      </div>
       <div className="posts">
         {data.allStrapiArticle.edges.map(({ node }) =>
           node.publico ? (

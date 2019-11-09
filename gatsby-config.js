@@ -19,18 +19,13 @@ module.exports = {
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
     "gatsby-plugin-offline",
+    `gatsby-plugin-sitemap`,
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         host: "https://www.enbonnet.me",
         sitemap: "https://www.enbonnet.me/sitemap.xml",
         policy: [{ userAgent: "*", allow: "/" }],
-      },
-    },
-    {
-      resolve: "gatsby-plugin-typography",
-      options: {
-        pathToConfigModule: "src/utils/typography",
       },
     },
     {

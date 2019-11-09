@@ -1,4 +1,5 @@
 @import "./normalize.scss";
+@import url("https://fonts.googleapis.com/css?family=Space+Mono:400,400i,700,700i&display=swap");
 
 // Colors
 $black: #000000;
@@ -10,6 +11,8 @@ $green: #548687;
 $purple: #473335;
 $grey: #464646;
 $greyTwo: #d8d8d8;
+
+$fontSpace: "Space Mono", monospace;
 
 h1,
 h2,
@@ -28,10 +31,14 @@ img {
 ul {
   margin-top: 32px;
   margin-bottom: 32px;
+  li {
+    margin-bottom: 8px;
+  }
 }
 
 html {
   background-color: $white;
+  font-family: $fontSpace;
 }
 
 a {
@@ -42,7 +49,7 @@ a {
 }
 
 p {
-  margin-bottom: 0px;
+  margin: 0px;
   line-height: 32px;
   & > code {
     color: $red;
@@ -100,9 +107,15 @@ header {
 }
 
 .section-title {
-  text-align: center;
+  align-items: center;
+  display: flex;
+  font-weight: 400;
+  justify-content: center;
   margin-top: 64px;
-  font-size: 24px;
+  .blog-title {
+    font-size: 24px;
+    padding: 0 16px;
+  }
 }
 
 .posts {
@@ -126,6 +139,7 @@ header {
         margin-bottom: 0;
         margin: 16px 0;
         .image {
+          max-width: 100%;
           margin: 0;
         }
       }
@@ -146,7 +160,7 @@ header {
 }
 
 footer {
-  width: 100%;
+  max-width: 100%;
   padding: 4px 16px;
   display: flex;
   justify-content: space-between;
