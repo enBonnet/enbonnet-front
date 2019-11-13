@@ -14,6 +14,19 @@ module.exports = {
     },
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-152357209-1",
+        head: true,
+        anonymize: true,
+        respectDNT: true,
+        pageTransitionDelay: 0,
+        sampleRate: 5,
+        siteSpeedSampleRate: 10,
+        cookieDomain: "enbonnet.me",
+      },
+    },
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sass",
     "gatsby-transformer-sharp",
