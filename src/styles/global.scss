@@ -130,6 +130,7 @@ header {
     .title {
       font-weight: 700;
       font-size: 26px;
+      margin-bottom: 16px;
     }
     .post-description {
       display: grid;
@@ -158,6 +159,12 @@ header {
 
 .post-content {
   margin-bottom: 32px;
+  blockquote {
+    margin: 8px;
+    background-color: $greyTwo;
+    padding: 8px;
+    border-radius: 4px;
+  }
 }
 
 footer {
