@@ -3,6 +3,8 @@ import { Link, graphql } from "gatsby"
 import { slugify } from "../utils/slugify"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Img from "gatsby-image"
+
 import "../styles/global.scss"
 
 const IndexPage = ({ data }) => (
@@ -29,11 +31,7 @@ const IndexPage = ({ data }) => (
                   <div className="title">{node.title}</div>
                   <div className="post-description">
                     <div className="post-image">
-                      <img
-                        className="image"
-                        src={node.image.publicURL}
-                        alt=" "
-                      />
+                      <Img fluid={node.image.childImageSharp.fluid} />
                     </div>
                     <p className="description">{node.description}</p>
                   </div>
@@ -56,7 +54,14 @@ export const pageQuery = graphql`
         node {
           strapiId
           image {
-            publicURL
+            childImageSharp {
+              fluid(maxWidth: 600) {
+                ...GatsbyImageSharpFluid_noBase64
+              }
+              original {
+                src
+              }
+            }
           }
           title
           description
