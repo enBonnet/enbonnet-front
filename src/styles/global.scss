@@ -74,10 +74,12 @@ main {
   }
 }
 
-.up {
-  cursor: pointer;
-  svg {
-    margin-right: 8px;
+button {
+  &.up {
+    border: none;
+    svg {
+      margin-right: 8px;
+    }
   }
 }
 
@@ -92,9 +94,8 @@ main {
 }
 
 .go-up {
-  .up {
-    justify-content: flex-end;
-  }
+  display: flex;
+  justify-content: flex-end;
 }
 
 header {

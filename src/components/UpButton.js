@@ -7,8 +7,8 @@ const moveScrollTop = () => {
 
 export const UpButton = () => {
   return (
-    <span onClick={() => moveScrollTop()} className="up align-button">
+    <button onClick={() => moveScrollTop()} className="up align-button">
       <Icons name="arrow-up" /> Arriba
-    </span>
+    </button>
   )
 }
