@@ -5,7 +5,8 @@ import ReactMarkdown from "react-markdown"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import CodeBlock from "../components/CodeBlock"
-import { BackButton } from "../components/backButton"
+import { BackButton } from "../components/BackButton"
+import { ButtonNav } from "../components/ButtonNav"
 
 const ArticleTemplate = ({ data }) => (
   <Layout>
@@ -29,7 +30,7 @@ const ArticleTemplate = ({ data }) => (
         renderers={{ code: CodeBlock }}
       />
     </article>
-    <BackButton />
+    <ButtonNav />
   </Layout>
 )
 

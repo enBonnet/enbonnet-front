@@ -1,9 +1,12 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import { slugify } from "../utils/slugify"
+import Img from "gatsby-image"
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Img from "gatsby-image"
+import { UpButton } from "../components/UpButton"
+
+import { slugify } from "../utils/slugify"
 
 import "../styles/global.scss"
 
@@ -40,6 +43,9 @@ const IndexPage = ({ data }) => (
             </div>
           ) : null
         )}
+      </div>
+      <div className="go-up">
+        <UpButton />
       </div>
     </section>
   </Layout>
