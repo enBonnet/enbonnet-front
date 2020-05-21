@@ -16,8 +16,7 @@ const IndexPage = ({ data }) => (
     <p className="biography">
       Hola, bienvenid(a), soy nerd, frontend developer, me encanta colaborar con
       las comunidades de desarrolladores y compartir conocimientos.
-      Co-organizador de <a href="https://noders.com">Noders</a> y{" "}
-      <a href="https://nodeschool.io/santiago">Nodeschool Santiago</a>. Humano
+      Organizador de <a href="https://nodeschool.io/santiago">Nodeschool Santiago</a>. Humano
       de <a href="https://instagram.com/kyratail">@kyratail</a> a tiempo
       completo.
     </p>
