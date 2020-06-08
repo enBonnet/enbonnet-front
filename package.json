@@ -22,7 +22,7 @@
     "prop-types": "15.7.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-helmet": "6.0.0",
+    "react-helmet": "6.1.0",
     "react-markdown": "4.3.1",
     "react-syntax-highlighter": "12.2.1",
     "react-typography": "0.16.19",
