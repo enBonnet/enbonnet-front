@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: enbonnet.me
+Token: cec8d0d3ee965a0c2af937e343e8e3ffe2dc3f8fbbadebe5ad2049f02045ba0b
