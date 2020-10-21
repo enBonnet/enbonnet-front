@@ -1,5 +1,5 @@
 import React from "react"
-import { BackButton } from "./BackButton"
+import { BackButton } from "./backButton"
 import { UpButton } from "./UpButton"
 
 export const ButtonNav = () => {

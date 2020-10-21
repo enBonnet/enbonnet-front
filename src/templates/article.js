@@ -5,7 +5,7 @@ import ReactMarkdown from "react-markdown"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import CodeBlock from "../components/CodeBlock"
-import { BackButton } from "../components/BackButton"
+import { BackButton } from "../components/backButton"
 import { ButtonNav } from "../components/ButtonNav"
 
 const ArticleTemplate = ({ data }) => (
